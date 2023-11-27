@@ -6,6 +6,15 @@ main {
 }
 @media (max-width: 768px) {
   #root {
-    margin-top: 99px;
+    margin-top: 0px;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

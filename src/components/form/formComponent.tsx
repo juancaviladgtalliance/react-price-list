@@ -1,4 +1,4 @@
-import { Buildingslist, priceListTitles } from "../../constants";
+import { Buildingslist } from "../../constants";
 import { Styled, redux } from "../../libs";
 import { IncludesTypes, StatusInput } from "../../types";
 import SendButton from "./SendButton";
@@ -46,7 +46,7 @@ export default function FormComponent() {
 
   return (
     <Styled.FormWrapper className="form gtm_general_contact_form iboost-secured-recaptcha-form">
-      <h2 className="form-text">{priceListTitles.formTextMobile}</h2>
+      {/*   <h2 className="form-text">{priceListTitles.formTextMobile}</h2> */}
       <div className="form-container">
         <div className="personaldata">
           <InputsComponent

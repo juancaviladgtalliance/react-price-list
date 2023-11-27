@@ -20,11 +20,12 @@ export default function TitleComponent() {
 
   return (
     <Styled.TitleWrapper>
-      <h1
-        className={`title${changeTitle ? " ver1" : " ver2"}`}
-        onMouseEnter={handlerMove}
-      >
-        {text}
+      <h1 onMouseEnter={handlerMove}>
+        <span className={`title${changeTitle ? " ver1" : " ver2"}`}>
+          {text}
+        </span>
+
+        <span className="no-title">{appTitle}</span>
       </h1>
     </Styled.TitleWrapper>
   );

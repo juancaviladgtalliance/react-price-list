@@ -98,7 +98,7 @@ export const Buildingslist: BuildingItems = {
       target: "surfside",
       property_style: "baia-bay",
       title: "La Baia North",
-      prices: { min: 1.3, min_sufix: "M", max_sufix: "M+", max: 5 },
+      prices: { min: 1.3, min_sufix: "M", max_sufix: "M", max: 5 },
       bed_rooms: { min: 2, max: 4 },
       completation_date: 2024,
       site_url: "https://luxlifemiamiblog.com/condos/la-baia-north-bay-harbor/",
@@ -119,7 +119,7 @@ export const Buildingslist: BuildingItems = {
         max_sufix: "M+",
         max: 37,
       },
-      bed_rooms: { min: 2, max: 4 },
+      bed_rooms: { min: 2, max: 5 },
       completation_date: 2025,
       site_url: "https://luxlifemiamiblog.com/condos/the-perigon-miami-beach/",
       logo_image_url: `${assetUrl}/img/logos/logo9.png`, ///public/img/logos/logo9.png
@@ -135,7 +135,7 @@ export const Buildingslist: BuildingItems = {
       title: "Shore Club",
       prices: { min: 6, min_sufix: "M", max_sufix: "M+", max: 35 },
       bed_rooms: { min: 2, max: 4 },
-      completation_date: 2016,
+      completation_date: 2026,
       site_url:
         "https://luxlifemiamiblog.com/condos/shore-club-private-collection/",
       logo_image_url: `${assetUrl}/img/logos/logo10.png`, //public/img/logos/logo10.png
@@ -179,7 +179,7 @@ export const Buildingslist: BuildingItems = {
       target: "edgewater",
       property_style: "edition-residences",
       title: "Edition Edgewater",
-      prices: { min: 1.7, min_sufix: "M", max_sufix: "M+", max: 7.5 },
+      prices: { min: 1.7, min_sufix: "M", max_sufix: "M", max: 7.5 },
       bed_rooms: { min: 1, max: 4 },
       completation_date: 2025,
       site_url:
@@ -195,7 +195,7 @@ export const Buildingslist: BuildingItems = {
       target: "brickell",
       property_style: "cipriani",
       title: "Cipriani",
-      prices: { min: 1.6, min_sufix: "M", max_sufix: "M+", max: 22 },
+      prices: { min: 1.6, min_sufix: "M", max_sufix: "M", max: 22 },
       bed_rooms: { min: 1, max: 4 },
       completation_date: 2026,
       site_url:
@@ -211,7 +211,7 @@ export const Buildingslist: BuildingItems = {
       target: "brickell",
       property_style: "residence-1428",
       title: "1428",
-      prices: { min: 2.5, min_sufix: "M", max_sufix: "M+", max: 20 },
+      prices: { min: 2.5, min_sufix: "M", max_sufix: "M", max: 20 },
       bed_rooms: { min: 2, max: 4 },
       completation_date: 2026,
       site_url:
@@ -227,7 +227,7 @@ export const Buildingslist: BuildingItems = {
       target: "brickell",
       property_style: "regis",
       title: "St Regis Brickell",
-      prices: { min: 3.8, min_sufix: "M", max_sufix: "M+", max: 35 },
+      prices: { min: 3.8, min_sufix: "M", max_sufix: "M", max: 35 },
       bed_rooms: { min: 2, max: 6 },
       completation_date: 2027,
       site_url: "https://luxlifemiamiblog.com/condos/st-regis-brickell/",
