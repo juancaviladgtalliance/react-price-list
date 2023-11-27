@@ -45,7 +45,20 @@ export default function ListItemComponent({
           activeChecked={() => addOptionClick(title)}
         />
         <h3 onClick={() => openClick(order)}>
-          {order}. {title}
+          <span>{order}.</span> <span className="text">{title}</span>{" "}
+          <span className="price">
+            {prices.max ? (
+              <>
+                {prices.max}
+                {prices.max_sufix}
+              </>
+            ) : (
+              <>
+                {prices.min}
+                {prices.max_sufix}
+              </>
+            )}
+          </span>
         </h3>
         <button className="open-button" onClick={() => openClick(order)}>
           {" "}
@@ -64,7 +77,7 @@ export default function ListItemComponent({
               {prices.max && (
                 <>
                   {" "}
-                  to
+                  to{" "}
                   <span>
                     {prices.max}
                     {prices.max_sufix}

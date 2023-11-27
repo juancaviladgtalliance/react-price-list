@@ -1,6 +1,7 @@
 import { Styled, redux } from "../../libs";
 import { BuildingIem } from "../../types";
 import ModalComponent from "../modalComponent";
+import Check from "../../../public/img/logos/check.png";
 
 function BuildingItem({ building }: { building: BuildingIem }) {
   const dispatch = redux.hooks.useAppDispatch();
@@ -25,7 +26,7 @@ function BuildingItem({ building }: { building: BuildingIem }) {
     }
   };
   const includeNeigborhood = options.includes(building.title) ? (
-    <img src={`${logo_image_url}/img/logos/check.png`} alt={building.title} />
+    <img src={Check} alt={building.title} />
   ) : (
     <span>{order}</span>
   );
@@ -35,7 +36,6 @@ function BuildingItem({ building }: { building: BuildingIem }) {
       modal={building}
       active={() => {
         hanclerClick(title);
-        activeClick(order);
       }}
     />
   ) : (

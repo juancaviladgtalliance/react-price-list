@@ -6,8 +6,8 @@ import ListComponent from "./listComponent";
 export default function BackgroundComponent() {
   return (
     <Styled.BackgroundWrapper src={`${assetUrl}/img/price-list-bg.jpg`}>
-      <TitleComponent />
       <ListComponent />
+      <TitleComponent />
     </Styled.BackgroundWrapper>
   );
 }

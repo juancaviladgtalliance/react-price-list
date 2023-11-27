@@ -21,13 +21,43 @@ export const TitleWrapper = styled.div`
   h1 {
     color: #fff;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.5rem;
     transition: opacity 1s ease, transform 1s ease;
-    &.ver1 {
+    .ver1 {
       animation: fade 2s ease 0s 1 normal forwards;
     }
-    &.ver2 {
+    .ver2 {
       animation: revfade 2s ease 0s 1 normal forwards;
+    }
+  }
+  @media (max-width: 767px) {
+    top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    .title {
+      display: none;
+    }
+    .no-title {
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1290px) {
+    h1 {
+      font-size: 0px;
+      &.ver1,
+      span.title {
+        font-size: 0rem !important;
+      }
+      .no-title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  @media (min-width: 1291px) {
+    h1 {
+      font-size: 1.5rem;
+      .no-title {
+        display: none;
+      }
     }
   }
   @keyframes fade {
@@ -46,17 +76,6 @@ export const TitleWrapper = styled.div`
       opacity: 1;
     }
   }
-  @media (max-width: 767px) {
-    top: 0px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    h1 {
-      font-size: 14px;
-      &.ver1 {
-        font-size: 8px;
-      }
-    }
-  }
 `;
 export const BackgroundWrapper = styled.section<{ src: string }>`
   background-image: url(${(props) => props.src});
@@ -73,8 +92,26 @@ export const ListWrapper = styled.section`
   .neighborhood-item:nth-child(even) {
     background: #f1f4f7;
   }
+  h2 {
+    font-size: 1rem;
+    line-height: 1.2;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: #3b4c7e;
+    @media (min-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
   @media (min-width: 1291px) {
     display: none;
+    .text-component {
+    }
+  }
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 0.8rem;
+    }
   }
 `;
 export const ListItemWrapper = styled.article`
@@ -109,6 +146,16 @@ export const ListItemWrapper = styled.article`
       font-size: 14px;
       line-height: 1;
       font-weight: 600;
+
+      display: grid !important;
+      grid-template-columns: 20px auto 47px;
+      align-items: stretch;
+      span.price {
+        color: #3b4c7e;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
     }
     .open-button {
       height: 30px;
@@ -282,14 +329,22 @@ export const ModalItemWrapper = styled.div`
   justify-content: center;
   gap: 7px;
   width: 13vw;
-  z-index: 10;
+  z-index: 11;
   padding: 15px;
   bottom: 50px;
   left: -4vw;
   min-width: 150px;
   font-size: 0.75rem;
   text-align: center;
-
+  animation: fade 0.5s ease 0s 1 normal forwards;
+  .close-modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    button {
+      background-color: transparent;
+    }
+  }
   h4.price-title {
     font-weight: bolder;
   }
@@ -386,8 +441,14 @@ export const FormWrapper = styled.section`
   }
   @media (min-width: 1800px) {
     bottom: 0;
-    padding-bottom: 30px;
-    padding-top: 25px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    input[type="text"] {
+      height: 40px;
+      font-size: 1rem;
+      padding: 0 1rem;
+      padding-left: 40px;
+    }
   }
 `;
 export const IncludeInput = styled.div`
@@ -396,12 +457,21 @@ export const IncludeInput = styled.div`
   justify-content: flex-start;
   background: #d3dfee;
   border-radius: 5px;
-  height: 30px;
   margin-bottom: 10px;
   padding: 3px;
   align-items: center;
-  font-size: 0.8rem;
   gap: 10px;
+  height: 40px;
+  font-size: 1rem;
+
+  button {
+    height: 35px;
+    width: 35px;
+    img {
+      height: 35px;
+      width: 35px;
+    }
+  }
   &:last-type {
     margin-bottom: 0;
   }
@@ -411,6 +481,19 @@ export const IncludeInput = styled.div`
   }
   button {
     border: 1px solid #2f4a7f;
+  }
+  @media (min-width: 1119px) and (max-width: 1800px) {
+    height: 30px;
+    font-size: 0.8rem;
+
+    button {
+      height: 20px;
+      width: 20px;
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
   }
 `;
 export const CheckWrapper = styled.button<{
@@ -468,7 +551,8 @@ export const TextAreaWrapper = styled.label`
   width: 100%;
   textarea {
     width: 100%;
-    height: 30px;
+    height: 49px;
+    font-size: 1rem;
     margin: 0;
     position: relative;
     bottom: -3px;
@@ -476,13 +560,19 @@ export const TextAreaWrapper = styled.label`
     text-align: center;
     padding-top: 7px;
   }
+  @media (min-width: 1119px) and (max-width: 1800px) {
+    textarea {
+      height: 30px;
+      font-size: 0.8rem;
+    }
+  }
 `;
 export const FormBtn = styled.div`
   button {
     background-color: #2f4a7f;
     color: white;
     border-radius: 5px;
-    height: 30px;
+    height: 40px;
     display: flex;
     font-size: 14px;
     justify-content: center;
@@ -491,6 +581,9 @@ export const FormBtn = styled.div`
     font-weight: 700;
     transition: all 0.5s ease-in-out;
     width: 100%;
+    @media (min-width: 1119px) and (max-width: 1800px) {
+      height: 30px;
+    }
     &:disabled {
       cursor: not-allowed;
     }
