@@ -11,7 +11,7 @@ export const assetUrl = import.meta.env.DEV
   : import.meta.env.VITE_PROD_ASSET_URL;
 
 export const dataInitialState: DataForm = {
-  ib_tags: "Price List",
+  ib_tags: "Price List Miami",
   action: "idxboost_contact_inquiry",
   name: { status: StatusInput.idle, value: "" },
   email: { status: StatusInput.idle, value: "" },
