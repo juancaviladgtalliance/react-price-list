@@ -67,7 +67,7 @@ export default function ListItemComponent({
                   {" "}
                   to{" "}
                   <span>
-                    {`$${prices.min}`}
+                    {`$${prices.max}`}
                     {prices.max_sufix}
                   </span>
                 </>
