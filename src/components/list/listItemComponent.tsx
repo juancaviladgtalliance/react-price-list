@@ -46,19 +46,7 @@ export default function ListItemComponent({
         />
         <h3 onClick={() => openClick(order)}>
           <span>{order}.</span> <span className="text">{title}</span>{" "}
-          <span className="price">
-            {prices.max ? (
-              <>
-                {prices.max}
-                {prices.max_sufix}
-              </>
-            ) : (
-              <>
-                {prices.min}
-                {prices.max_sufix}
-              </>
-            )}
-          </span>
+          <span className="price">{prices.min}M+</span>
         </h3>
         <button className="open-button" onClick={() => openClick(order)}>
           {" "}

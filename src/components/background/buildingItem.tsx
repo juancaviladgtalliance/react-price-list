@@ -43,7 +43,7 @@ function BuildingItem({ building }: { building: BuildingIem }) {
       <div
         className="price-container"
         onClick={() => hanclerClick(title)}
-      >{`$ ${prices.min} ${prices.max_sufix}`}</div>
+      >{`$ ${prices.min} M+`}</div>
       <div className="img-container" onClick={() => activeClick(order)}>
         <img src={logo_image_url} alt={title} />
       </div>
