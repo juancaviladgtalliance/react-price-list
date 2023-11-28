@@ -210,7 +210,7 @@ export const Buildingslist: BuildingItems = {
       neighborhood: "Brickell",
       target: "brickell",
       property_style: "residence-1428",
-      title: "1428",
+      title: "1428 Brickell",
       prices: { min: 2.5, min_sufix: "M", max_sufix: "M", max: 20 },
       bed_rooms: { min: 2, max: 4 },
       completation_date: 2026,

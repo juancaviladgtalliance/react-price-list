@@ -46,7 +46,7 @@ export default function ListItemComponent({
         />
         <h3 onClick={() => openClick(order)}>
           <span>{order}.</span> <span className="text">{title}</span>{" "}
-          <span className="price">{prices.min}M+</span>
+          <span className="price">{`$${prices.min}`}M+</span>
         </h3>
         <button className="open-button" onClick={() => openClick(order)}>
           {" "}
@@ -59,7 +59,7 @@ export default function ListItemComponent({
             <h4 className="price-title">Price</h4>
             <p className="price">
               <span>
-                {prices.min}
+                {`$${prices.min}`}
                 {prices.min_sufix}
               </span>
               {prices.max && (
@@ -67,7 +67,7 @@ export default function ListItemComponent({
                   {" "}
                   to{" "}
                   <span>
-                    {prices.max}
+                    {`$${prices.min}`}
                     {prices.max_sufix}
                   </span>
                 </>

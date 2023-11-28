@@ -34,13 +34,13 @@ function ModalComponent({
           <h4 className="price-title">Price</h4>
           <p className="price">
             <span>
-              {prices.min}
+              {`$ ${prices.min}`}
               {prices.min_sufix}
             </span>
             {prices.max && (
               <span>
                 {" "}
-                to {prices.max}
+                to{` $ ${prices.max}`}
                 {prices.max_sufix}
               </span>
             )}
