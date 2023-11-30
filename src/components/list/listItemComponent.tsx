@@ -46,7 +46,7 @@ export default function ListItemComponent({
         />
         <h3 onClick={() => openClick(order)}>
           <span>{order}.</span> <span className="text">{title}</span>{" "}
-          <span className="price">{`$${prices.min}`}M+</span>
+          <span className="price">{`$${prices.min}${prices.min_sufix}`}</span>
         </h3>
         <button className="open-button" onClick={() => openClick(order)}>
           {" "}

@@ -22,6 +22,10 @@ export const TitleWrapper = styled.div`
     color: #fff;
     font-family: "Open Sans", sans-serif;
     transition: opacity 1s ease, transform 1s ease;
+    @media (max-width: 767px) {
+      font-size: 0.6rem;
+      padding: 5px;
+    }
     .ver1 {
       animation: fade 2s ease 0s 1 normal forwards;
     }
@@ -78,13 +82,51 @@ export const TitleWrapper = styled.div`
   }
 `;
 export const BackgroundWrapper = styled.section<{ src: string }>`
-  background-image: url(${(props) => props.src});
   position: relative;
+  background-image: url(${(props) => props.src});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: auto;
+  &:scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  scrollbar-color: none;
+
   width: 100%;
-  aspect-ratio: 14/7;
+  // overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .bg-slicer {
+    background-image: url(${(props) => props.src});
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 98vh;
+    width: 270vw;
+    @media (max-width: 767px) {
+      height: 45vh;
+      width: 350vw;
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      height: 45vh;
+      width: 270vw;
+    }
+    @media (min-width: 992px) and (max-width: 1024px) {
+      height: 72vh;
+      width: 240vw;
+    }
+    @media (min-width: 1025px) and (max-width: 1190px) {
+      height: 72vh;
+      width: 207vw;
+    }
+    @media (min-width: 1191px) and (max-width: 1290px) {
+      height: 72vh;
+      width: 207vw;
+    }
+  }
 `;
 export const ListWrapper = styled.section`
   .neighborhood-item {
@@ -93,7 +135,7 @@ export const ListWrapper = styled.section`
     background: #f1f4f7;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.2;
     padding: 15px;
     text-align: center;
@@ -131,7 +173,7 @@ export const ListItemWrapper = styled.article`
   }
   .neighborhood-title {
     display: flex;
-    height: 40px;
+    height: 50px;
     justify-content: space-between;
     padding: 0 10px;
     align-items: center;
@@ -146,7 +188,11 @@ export const ListItemWrapper = styled.article`
       font-size: 14px;
       line-height: 1;
       font-weight: 600;
-
+      span.text {
+        font-size: 11px;
+        padding-right: 5px;
+        line-height: 1.5;
+      }
       display: grid !important;
       grid-template-columns: 20px auto 47px;
       align-items: stretch;
@@ -196,20 +242,62 @@ export const PriceListWrapper = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
+  .price-list {
+    position: relative;
+  }
+  button.independent-buttons {
+    position: absolute;
+    z-index: 30;
+    bottom: 50%;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    display: block;
+    transition: 0.5s;
+    svg {
+      fill: white !important;
+      filter: drop-shadow(0px 1px 1px black);
+      height: 45px;
+    }
+    @media (max-width: 767px) {
+      bottom: 30%;
+      width: 30px;
+      height: 30px;
+      svg {
+        height: 20px;
+      }
+    }
+  }
+
+  .arrow-independent-left {
+    left: 10px;
+    @media (max-width: 767px) {
+      left: 0px;
+    }
+  }
+  .arrow-independent-right {
+    right: 10px;
+    @media (max-width: 767px) {
+      right: 0px;
+    }
+  }
+  .opacity-disabled {
+    opacity: 0;
+  }
 `;
 export const PriceItemWraper = styled.article`
   position: absolute;
   cursor: pointer;
   .trigger-mobile {
-    min-width: 17px;
-    height: 17px;
-    width: 17px;
+    min-width: 30px;
+    height: 30px;
+    width: 30px;
     border-radius: 50px;
     background: white;
     justify-content: center;
     align-items: center;
     display: flex;
-    font-size: 0.7rem;
+    font-size: 1rem;
     @media (min-width: 1291px) {
       display: none;
     }
@@ -262,60 +350,68 @@ export const PriceItemWraper = styled.article`
     }
   }
   &.shell-bay-residences {
-    bottom: 44%;
-    left: 1.4%;
-  }
-  &.st-regis-sunny-isles {
-    bottom: 54%;
-    left: 8.5%;
-  }
-  &.bentley-residences {
-    left: 15%;
-    bottom: 53%;
-  }
-  &.rivage {
-    left: 22.6%;
-    bottom: 53%;
-  }
-  &.baia-bay {
-    left: 33.3%;
-    bottom: 41%;
-  }
-  &.perigon {
-    left: 44%;
-    bottom: 48%;
-  }
-  &.shore-club {
-    left: 49.7%;
-    bottom: 50%;
-  }
-  &.five-park {
-    left: 55%;
     bottom: 51%;
+    left: 1.1%;
   }
-  &.villa-miami {
-    left: 60%;
-    bottom: 58%;
-  }
-  &.edition-residences {
-    left: 65%;
-    bottom: 51%;
-  }
-  &.cipriani {
-    left: 70%;
-    bottom: 56%;
-  }
-  &.residence-1428 {
-    left: 75%;
-    bottom: 53%;
-  }
-  &.regis {
-    left: 80.3%;
-    bottom: 58%;
-  }
-  &.vitagrove {
-    left: 90%;
+  &.pierty-sixty-six {
     bottom: 39%;
+    left: 8%;
+  }
+  &.sixth-and-rio {
+    bottom: 45%;
+    left: 18.1%;
+  }
+  &.andare {
+    bottom: 50%;
+    left: 22%;
+  }
+  &.selene {
+    bottom: 49%;
+    left: 26.5%;
+  }
+  &.the-terraces-fort-lauderdale {
+    bottom: 45%;
+    left: 30.3%;
+  }
+  &.edition-residences-fort-lauderdale {
+    bottom: 42%;
+    left: 37%;
+  }
+  &.salato-pompano-beach {
+    bottom: 43%;
+    left: 47%;
+  }
+  &.ritz-carlton-pompano-beach {
+    bottom: 48%;
+    left: 53%;
+  }
+  &.waldorf-astoria-pompano-beach {
+    bottom: 51%;
+    left: 58.5%;
+  }
+  &.casamar-pompano-beach {
+    bottom: 45%;
+    left: 63.3%;
+  }
+  &.rosewood-residences-hillsboro-beach {
+    bottom: 42%;
+    left: 71%;
+  }
+  &.alina-220-boca-raton {
+    bottom: 43%;
+    left: 77.3%;
+  }
+  &.alina-210-boca-raton {
+    bottom: 42%;
+    left: 83%;
+  }
+  &.palm-beach-gardens {
+    bottom: 51%;
+    left: 1.1%;
+  }
+  &.ritz-carlton-residences-palm-beach-gardens {
+    bottom: 43%;
+    left: 92.2%;
   }
 `;
 export const ModalItemWrapper = styled.div`
@@ -626,6 +722,278 @@ export const FormBtn = styled.div`
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+`;
+export const ListNeighborhoodWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  left: 0;
+  bottom: 25%;
+
+  .list-neighborhood {
+    display: inline-block;
+    padding: 10px;
+    h3 {
+      background-color: rgb(118, 134, 124);
+      padding: 5px;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    padding: 2px;
+    h3 {
+      font-size: 15px;
+    }
+    &#hallandale {
+      h3 {
+        min-width: 12vw;
+      }
+    }
+    &#fort-lauderdale {
+      h3 {
+        min-width: 105vw;
+      }
+    }
+    &#pompano-beach {
+      h3 {
+        min-width: 65vw;
+      }
+    }
+    &#hillsboro-beach {
+      h3 {
+        min-width: 25vw;
+      }
+    }
+    &#boca-raton {
+      h3 {
+        min-width: 30vw;
+      }
+    }
+    &#palm-beach-gardens {
+      h3 {
+        min-width: 30vw;
+      }
+    }
+    @media (max-width: 435px) {
+      padding: 1vw;
+      h3 {
+        font-size: 9px;
+      }
+      &#hallandale {
+        h3 {
+          min-width: 12vw;
+        }
+      }
+      &#fort-lauderdale {
+        h3 {
+          min-width: 122vw;
+        }
+      }
+      &#pompano-beach {
+        h3 {
+          min-width: 86vw;
+        }
+      }
+      &#hillsboro-beach {
+        h3 {
+          min-width: 31vw;
+        }
+      }
+      &#boca-raton {
+        h3 {
+          min-width: 33vw;
+        }
+      }
+      &#palm-beach-gardens {
+        h3 {
+          min-width: 40vw;
+        }
+      }
+    }
+    @media (min-width: 436px) and (max-width: 767px) {
+      padding: 2px;
+      h3 {
+        font-size: 9px;
+      }
+      &#hallandale {
+        h3 {
+          min-width: 12vw;
+        }
+      }
+      &#fort-lauderdale {
+        h3 {
+          min-width: 132vw;
+        }
+      }
+      &#pompano-beach {
+        h3 {
+          min-width: 91vw;
+        }
+      }
+      &#hillsboro-beach {
+        h3 {
+          min-width: 31vw;
+        }
+      }
+      &#boca-raton {
+        h3 {
+          min-width: 39vw;
+        }
+      }
+      &#palm-beach-gardens {
+        h3 {
+          min-width: 38vw;
+        }
+      }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+      padding: 2px;
+      h3 {
+        font-size: 12px;
+      }
+      &#hallandale {
+        h3 {
+          min-width: 12vw;
+        }
+      }
+      &#fort-lauderdale {
+        h3 {
+          min-width: 102vw;
+        }
+      }
+      &#pompano-beach {
+        h3 {
+          min-width: 68vw;
+        }
+      }
+      &#hillsboro-beach {
+        h3 {
+          min-width: 22vw;
+        }
+      }
+      &#boca-raton {
+        h3 {
+          min-width: 28vw;
+        }
+      }
+      &#palm-beach-gardens {
+        h3 {
+          min-width: 30vw;
+        }
+      }
+    }
+    @media (min-width: 992px) and (max-width: 1024px) {
+      padding: 2px;
+      h3 {
+        font-size: 12px;
+      }
+      &#hallandale {
+        h3 {
+          min-width: 8vw;
+        }
+      }
+      &#fort-lauderdale {
+        h3 {
+          min-width: 92vw;
+        }
+      }
+      &#pompano-beach {
+        h3 {
+          min-width: 60vw;
+        }
+      }
+      &#hillsboro-beach {
+        h3 {
+          min-width: 22vw;
+        }
+      }
+      &#boca-raton {
+        h3 {
+          min-width: 25vw;
+        }
+      }
+      &#palm-beach-gardens {
+        h3 {
+          min-width: 25vw;
+        }
+      }
+    }
+    @media (min-width: 1025px) and (max-width: 1190px) {
+      padding: 2px;
+      h3 {
+        font-size: 12px;
+      }
+      &#hallandale {
+        h3 {
+          min-width: 12vw;
+        }
+      }
+      &#fort-lauderdale {
+        h3 {
+          min-width: 78vw;
+        }
+      }
+      &#pompano-beach {
+        h3 {
+          min-width: 49vw;
+        }
+      }
+      &#hillsboro-beach {
+        h3 {
+          min-width: 19vw;
+        }
+      }
+      &#boca-raton {
+        h3 {
+          min-width: 22vw;
+        }
+      }
+      &#palm-beach-gardens {
+        h3 {
+          min-width: 22vw;
+        }
+      }
+    }
+    @media (min-width: 1191px) and (max-width: 1290px) {
+      padding: 2px;
+      h3 {
+        font-size: 12px;
+      }
+      &#hallandale {
+        h3 {
+          min-width: 12vw;
+        }
+      }
+      &#fort-lauderdale {
+        h3 {
+          min-width: 78vw;
+        }
+      }
+      &#pompano-beach {
+        h3 {
+          min-width: 49vw;
+        }
+      }
+      &#hillsboro-beach {
+        h3 {
+          min-width: 19vw;
+        }
+      }
+      &#boca-raton {
+        h3 {
+          min-width: 22vw;
+        }
+      }
+      &#palm-beach-gardens {
+        h3 {
+          min-width: 22vw;
+        }
+      }
+    }
+    @media (min-width: 1800px) {
+      font-size: 18px;
     }
   }
 `;
