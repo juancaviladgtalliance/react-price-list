@@ -92,7 +92,7 @@ function SendButton() {
               const footer = document.getElementById("footer")!;
               const alink = document.createElement("a");
               alink.href =
-                "https://luxlifemiamiblog.com/what-are-the-best-fort-lauderdale-beachfront-condos-for-sale-in-2020/";
+                "https://luxlifemiamiblog.com/the-5-best-new-construction-condos-fort-lauderdale/";
               alink.target = "_blank";
               footer.appendChild(alink);
               alink.click();

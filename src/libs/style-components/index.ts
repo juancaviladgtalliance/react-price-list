@@ -172,6 +172,11 @@ export const ListItemWrapper = styled.article`
     }
   }
   .neighborhood-title {
+    span.text {
+      font-size: 11px;
+      padding-right: 5px;
+      line-height: 1.5;
+    }
     display: flex;
     height: 50px;
     justify-content: space-between;
