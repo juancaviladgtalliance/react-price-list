@@ -93,7 +93,7 @@ export const ListWrapper = styled.section`
     background: #f1f4f7;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 0.75rem;
     line-height: 1.2;
     padding: 15px;
     text-align: center;
