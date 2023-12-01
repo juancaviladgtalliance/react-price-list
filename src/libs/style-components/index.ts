@@ -146,7 +146,11 @@ export const ListItemWrapper = styled.article`
       font-size: 14px;
       line-height: 1;
       font-weight: 600;
-
+      span.text {
+        font-size: 11px;
+        padding-right: 5px;
+        line-height: 1.5;
+      }
       display: grid !important;
       grid-template-columns: 20px auto 47px;
       align-items: stretch;
