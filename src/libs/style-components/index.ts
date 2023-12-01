@@ -402,11 +402,11 @@ export const PriceItemWraper = styled.article`
     bottom: 42%;
     left: 71%;
   }
-  &.alina-220-boca-raton {
+  &.alina-210-boca-raton {
     bottom: 43%;
     left: 77.3%;
   }
-  &.alina-210-boca-raton {
+  &.alina-220-boca-raton {
     bottom: 42%;
     left: 83%;
   }
