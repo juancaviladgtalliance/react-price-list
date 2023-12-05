@@ -468,7 +468,7 @@ export const IncludeInput = styled.div`
   gap: 10px;
   height: 40px;
   font-size: 1rem;
-
+  background-size: 18px;
   button {
     height: 35px;
     width: 35px;
