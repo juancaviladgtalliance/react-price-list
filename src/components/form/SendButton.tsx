@@ -14,13 +14,16 @@ function SendButton() {
 
   const handlerClick = () => {
     const regexEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (message.includes.length == 0) {
+      dispatch(redux.formData.addMessageIncludes("None Includes Selected"));
+      // dispatch(redux.formData.addMessageOption("All buildings"));
+    }
 
     if (
       name.value == "" ||
       phone.value == "" ||
       email.value == "" ||
       message.options.length == 0 ||
-      message.includes.length == 0 ||
       !regexEmail.test(email.value)
     ) {
       if (name.value == "") {
@@ -53,10 +56,6 @@ function SendButton() {
       }
       if (message.options.length == 0) {
         toast.error("Please select at least one Building");
-        setHasError(true);
-      }
-      if (message.includes.length == 0) {
-        toast.error("Please select at least one include");
         setHasError(true);
       }
     } else {
