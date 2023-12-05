@@ -397,6 +397,7 @@ export const FormWrapper = styled.section`
     background-repeat: no-repeat;
     background-position: 10px;
     font-size: 0.8rem;
+    background-size: 18px;
   }
   input.name {
     background-image: url(${assetUrl}/img/user.svg);
