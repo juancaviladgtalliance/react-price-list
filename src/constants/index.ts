@@ -23,6 +23,7 @@ export const dataInitialState: DataForm = {
 export const uiInitialState: IuDataInfo = {
   changeTitle: false,
   openOptions: [],
+  activeModal: true,
 };
 
 export const Buildingslist: BuildingItems = {

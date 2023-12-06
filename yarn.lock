@@ -1660,6 +1660,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+transition-hook@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/transition-hook/-/transition-hook-1.5.2.tgz#2af407a2bfa7fc84dec0b19af5ccd5fc88408e38"
+  integrity sha512-zVW5wP+hzOCk56jU5V5GAIsuaf+gZv43pzxyimXQ74JnD1yoprxTfzoPjr0yjC/Mrc9JyCh3Wb6UhXD+8dlO4w==
+
 ts-api-utils@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.0.3.tgz#f12c1c781d04427313dbac808f453f050e54a331"

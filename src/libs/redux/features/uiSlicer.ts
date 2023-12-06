@@ -22,6 +22,9 @@ const uiSlicer = createSlice({
         (option) => option !== action.payload
       );
     },
+    setModal: (state) => {
+      state.activeModal = !state.activeModal;
+    },
   },
 });
 export const { setChangeTitle, addOpenOptions, removeOption } =

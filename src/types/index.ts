@@ -36,6 +36,7 @@ export interface MesageData {
 export interface IuDataInfo {
   changeTitle: boolean;
   openOptions: number[];
+  activeModal: boolean;
 }
 export interface RangePriceItem {
   min: number;
