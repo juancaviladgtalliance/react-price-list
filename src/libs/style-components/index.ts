@@ -48,13 +48,16 @@ export const TitleWrapper = styled.div`
         font-size: 0rem !important;
       }
       .no-title {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
       }
     }
   }
   @media (min-width: 1291px) {
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      &.ver1 {
+        font-size: 1rem;
+      }
       .no-title {
         display: none;
       }
@@ -383,7 +386,7 @@ export const ModalItemWrapper = styled.div`
   }
 `;
 export const FormWrapper = styled.section`
-  background: rgba(0, 0, 0, 0.5);
+  // background: rgba(0, 0, 0, 0.5);
   width: 100%;
   input[type="text"] {
     width: 100%;
@@ -420,7 +423,7 @@ export const FormWrapper = styled.section`
   @media (min-width: 1120px) {
     .form-container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       max-width: 1500px;
       margin: auto;
@@ -632,5 +635,70 @@ export const FormBtn = styled.div`
     100% {
       transform: rotate(360deg);
     }
+  }
+`;
+
+export const ModalInfoWrapper = styled.div`
+  transition: position 1s;
+  &.modaled {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    .button-control {
+      padding: 10px;
+    }
+    .modal-content {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  .change-state {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #41528e;
+    color: white;
+    font-weight: 700;
+    width: 120px;
+    text-align: center;
+  }
+  .modal {
+    position: relative;
+    justify-content: flex-end;
+    display: flex;
+
+    .modal-content {
+      margin: 11px;
+      background: white;
+      padding: 13px;
+      text-align: center;
+      font-size: 0.8rem;
+      border-radius: 5px;
+      max-width: 260px;
+      color: #41528e;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: white;
+        top: calc(50% - 7px);
+        transform: rotate(45deg);
+        right: -8px;
+      }
+      @media (min-width: 1500px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media (max-width: 1119px) {
+    display: none;
   }
 `;
