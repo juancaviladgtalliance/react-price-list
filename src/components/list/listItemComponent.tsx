@@ -1,7 +1,7 @@
 import { Styled, redux } from "../../libs";
 import { BuildingIem } from "../../types";
 import CheckForm from "../form/checkForm";
-import Chevron from "../../../public/img/chevron.svg";
+//import Chevron from "../../../public/img/chevron.svg";
 
 export default function ListItemComponent({
   building,
@@ -10,21 +10,20 @@ export default function ListItemComponent({
   building: BuildingIem;
   opened: boolean;
 }) {
-  const { order, title, prices, bed_rooms, completation_date, logo_image_url } =
-    building;
+  const { order, title, prices } = building;
   const dispatch = redux.hooks.useAppDispatch();
   const {
     message: { options },
   } = redux.hooks.useAppSelector((state) => state.form);
 
   const className = opened ? " opened" : "";
-  const openClick = (order: number) => {
+  /* const openClick = (order: number) => {
     if (opened) {
       dispatch(redux.ui.removeOption(order));
     } else {
       dispatch(redux.ui.addOpenOptions(order));
     }
-  };
+  }; */
   const addOptionClick = (neighborhoodTitle: string) => {
     if (options.includes(neighborhoodTitle)) {
       dispatch(redux.formData.removeMessageOption(neighborhoodTitle));
@@ -44,16 +43,16 @@ export default function ListItemComponent({
           className="check-list"
           activeChecked={() => addOptionClick(title)}
         />
-        <h3 onClick={() => openClick(order)}>
+        <h3 onClick={() => addOptionClick(title)}>
           <span>{order}.</span> <span className="text">{title}</span>{" "}
-          <span className="price">{`$${prices.min}${prices.min_sufix}`}</span>
+          <span className="price">{`$${prices.min}`}M+</span>
         </h3>
-        <button className="open-button" onClick={() => openClick(order)}>
+        {/*  <button className="open-button" onClick={() => openClick(order)}>
           {" "}
           <img src={Chevron} alt={title} />{" "}
-        </button>
+        </button> */}
       </div>
-      <div className="neighborhood-content">
+      {/*  <div className="neighborhood-content">
         <div className="left-section neghborhood-data">
           <div className="constr-price">
             <h4 className="price-title">Price</h4>
@@ -92,7 +91,7 @@ export default function ListItemComponent({
         <div className="right-section neghborhood-buttons">
           <img src={logo_image_url} alt={title} />
         </div>
-      </div>
+      </div> */}
     </Styled.ListItemWrapper>
   );
 }

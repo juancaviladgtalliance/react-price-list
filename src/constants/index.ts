@@ -261,9 +261,9 @@ export const Buildingslist: BuildingItems = {
 };
 export const priceListTitles: PriceListTitles = {
   appTitle: "The Best New Construction Condos in Fort Lauderdale",
-  priceText: `Below is a list of what we consider the best new construction condos in Fort Lauderdale. For pricing information on select buildings, please tick the corresponding boxes.`,
+  priceText: `Click the box of the buildings you want prices from and fill out the form below.`,
   formTextMobile:
-    "Above is a list of what we consider the best new construction condos in Fort Lauderdale. For pricing information on select buildings, please tick the corresponding boxes.",
+    "Click the box of the buildings you want prices from and fill out the form below.",
 };
 export const neighborhoodIndex: NeighborhoodIndex[] = [
   { text: "Hallandale Beach", id: "hallandale" },

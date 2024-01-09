@@ -4,7 +4,7 @@ import { assetUrl } from "../../constants/index";
 export const TitleWrapper = styled.div`
   width: 100%;
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 0;
   text-align: center;
   z-index: 10;
@@ -18,66 +18,42 @@ export const TitleWrapper = styled.div`
     rgba(59, 76, 126, 1) 52%,
     rgba(255, 255, 255, 0) 100%
   );
-  h1 {
+  h1,
+  h2 {
     color: #fff;
     font-family: "Open Sans", sans-serif;
     transition: opacity 1s ease, transform 1s ease;
-    @media (max-width: 767px) {
-      font-size: 0.6rem;
-      padding: 5px;
-    }
-    .ver1 {
-      animation: fade 2s ease 0s 1 normal forwards;
-    }
-    .ver2 {
-      animation: revfade 2s ease 0s 1 normal forwards;
-    }
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 18px;
   }
   @media (max-width: 767px) {
-    top: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    .title {
-      display: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    top: 8px;
+    h1 {
+      font-size: 14px;
     }
-    .no-title {
-      font-size: 16px;
+    h2 {
+      display: none;
     }
   }
   @media (min-width: 768px) and (max-width: 1290px) {
-    h1 {
-      font-size: 0px;
-      &.ver1,
-      span.title {
-        font-size: 0rem !important;
-      }
-      .no-title {
-        font-size: 1.5rem;
-      }
-    }
   }
   @media (min-width: 1291px) {
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      &.ver1 {
+        font-size: 1rem;
+      }
       .no-title {
         display: none;
       }
-    }
-  }
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes revfade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
     }
   }
 `;
@@ -102,9 +78,9 @@ export const BackgroundWrapper = styled.section<{ src: string }>`
   .bg-slicer {
     background-image: url(${(props) => props.src});
     background-size: 100% 100%;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
-    height: 98vh;
+    height: 84vh;
     width: 270vw;
     @media (max-width: 767px) {
       height: 45vh;
@@ -293,6 +269,19 @@ export const PriceListWrapper = styled.section`
 export const PriceItemWraper = styled.article`
   position: absolute;
   cursor: pointer;
+  .select-building {
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+    font-size: 0.6rem;
+    background: #d1e5f9;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    padding: 3px;
+    letter-spacing: -0.7px;
+    line-height: 1;
+  }
   .trigger-mobile {
     min-width: 30px;
     height: 30px;
@@ -598,7 +587,6 @@ export const IncludeInput = styled.div`
   }
 `;
 export const CheckWrapper = styled.button<{
-  src: string;
   height: string;
   width: string;
 }>`
@@ -611,13 +599,22 @@ export const CheckWrapper = styled.button<{
   min-width: ${(props) => props.width};
   border: none;
   cursor: pointer;
-  border-radius: 50%;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
-  background-image: url(${(props) => props.src});
+  background: white;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(59, 76, 126, 0.5) 20%,
+    rgba(255, 255, 255, 1) 50% rgba(59, 76, 126, 1) 76%
+  );
+  border: 1px solid #2f4a7f29;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   img {
     width: 100%;
     height: 100%;
@@ -630,7 +627,8 @@ export const CheckWrapper = styled.button<{
   &.active {
     img {
       opacity: 1;
-      transform: rotate3d(1, 1, 1, 0);
+      transform: rotate3d(1, 1, 1, 0) scale(1.5);
+      background: #2f4a7f;
     }
   }
 `;
