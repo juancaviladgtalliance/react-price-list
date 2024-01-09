@@ -1,32 +1,13 @@
 import { priceListTitles } from "../../constants";
-import useMountTransition from "../../hooks/useTransition";
-import { Styled, redux } from "../../libs";
+import { Styled } from "../../libs";
 
 export default function TitleComponent() {
   const { appTitle, priceText } = priceListTitles;
-  const dispatch = redux.hooks.useAppDispatch();
-  const { changeTitle } = redux.hooks.useAppSelector((state) => state.ui);
-  const hasTransitionedIn = useMountTransition(changeTitle, 1000);
-  const text = changeTitle && hasTransitionedIn ? priceText : appTitle;
-
-  const handlerMove = () => {
-    if (!changeTitle) {
-      dispatch(redux.ui.setChangeTitle(true));
-      setTimeout(() => {
-        dispatch(redux.ui.setChangeTitle(false));
-      }, 3000);
-    }
-  };
 
   return (
     <Styled.TitleWrapper>
-      <h1 onMouseEnter={handlerMove}>
-        <span className={`title${changeTitle ? " ver1" : " ver2"}`}>
-          {text}
-        </span>
-
-        <span className="no-title">{appTitle}</span>
-      </h1>
+      <h1>{appTitle}</h1>
+      <h2>{priceText}</h2>
     </Styled.TitleWrapper>
   );
 }

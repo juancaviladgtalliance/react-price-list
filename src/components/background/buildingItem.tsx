@@ -1,6 +1,6 @@
 import { Styled, redux } from "../../libs";
 import { BuildingIem } from "../../types";
-import ModalComponent from "../modalComponent";
+//import ModalComponent from "../modalComponent";
 import Check from "../../../public/img/logos/check.png";
 
 function BuildingItem({ building }: { building: BuildingIem }) {
@@ -9,7 +9,7 @@ function BuildingItem({ building }: { building: BuildingIem }) {
   const {
     message: { options },
   } = redux.hooks.useAppSelector((state) => state.form);
-  const { openOptions } = redux.hooks.useAppSelector((state) => state.ui);
+  // const { openOptions } = redux.hooks.useAppSelector((state) => state.ui);
 
   const hanclerClick = (title: string) => {
     if (options.includes(title)) {
@@ -18,33 +18,26 @@ function BuildingItem({ building }: { building: BuildingIem }) {
       dispatch(redux.formData.addMessageOption(title));
     }
   };
-  const activeClick = (order: number) => {
+  /* const activeClick = (order: number) => {
     if (openOptions.includes(order)) {
       dispatch(redux.ui.removeOption(order));
     } else {
       dispatch(redux.ui.addOpenOptions(order));
     }
-  };
+  }; */
   const includeNeigborhood = options.includes(building.title) ? (
     <img src={Check} alt={building.title} />
   ) : (
     <span>{order}</span>
   );
 
-  const modalItem = openOptions.includes(order) ? (
-    <ModalComponent
-      modal={building}
-      active={() => {
-        hanclerClick(title);
-      }}
-    />
-  ) : (
+  const modalItem = (
     <>
       <div
         className="price-container"
         onClick={() => hanclerClick(title)}
       >{`$ ${prices.min}M+`}</div>
-      <div className="img-container" onClick={() => activeClick(order)}>
+      <div className="img-container" onClick={() => hanclerClick(title)}>
         <img src={logo_image_url} alt={title} />
       </div>
     </>
@@ -60,7 +53,7 @@ function BuildingItem({ building }: { building: BuildingIem }) {
           <button
             className="trigger"
             onClick={() => {
-              activeClick(order);
+              hanclerClick(title);
             }}
           >
             {includeNeigborhood}

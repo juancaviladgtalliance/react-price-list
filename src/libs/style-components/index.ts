@@ -18,39 +18,32 @@ export const TitleWrapper = styled.div`
     rgba(59, 76, 126, 1) 52%,
     rgba(255, 255, 255, 0) 100%
   );
-  h1 {
+  h1,
+  h2 {
     color: #fff;
     font-family: "Open Sans", sans-serif;
     transition: opacity 1s ease, transform 1s ease;
-    .ver1 {
-      animation: fade 2s ease 0s 1 normal forwards;
-    }
-    .ver2 {
-      animation: revfade 2s ease 0s 1 normal forwards;
-    }
+  }
+  h1 {
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 18px;
   }
   @media (max-width: 767px) {
-    top: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    .title {
-      display: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    top: 8px;
+    h1 {
+      font-size: 14px;
     }
-    .no-title {
-      font-size: 16px;
+    h2 {
+      display: none;
     }
   }
   @media (min-width: 768px) and (max-width: 1290px) {
-    h1 {
-      font-size: 0px;
-      &.ver1,
-      span.title {
-        font-size: 0rem !important;
-      }
-      .no-title {
-        font-size: 1.5rem;
-      }
-    }
   }
   @media (min-width: 1291px) {
     h1 {
