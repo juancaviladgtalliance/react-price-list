@@ -4,7 +4,7 @@ import { assetUrl } from "../../constants/index";
 export const TitleWrapper = styled.div`
   width: 100%;
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 0;
   text-align: center;
   z-index: 10;
@@ -56,31 +56,15 @@ export const TitleWrapper = styled.div`
       }
     }
   }
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes revfade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;
 export const BackgroundWrapper = styled.section<{ src: string }>`
   background-image: url(${(props) => props.src});
   position: relative;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   width: 100%;
-  aspect-ratio: 14/7;
+  aspect-ratio: 16/6.7;
 `;
 export const ListWrapper = styled.section`
   .neighborhood-item {
@@ -119,12 +103,12 @@ export const ListItemWrapper = styled.article`
     font-weight: 700;
     color: #3b4c7e;
   }
-  .meta-text {
+  /*  .meta-text {
     span {
       font-weight: 700;
       color: #3b4c7e;
     }
-  }
+  } */
   .neighborhood-title {
     display: flex;
     height: 40px;
@@ -180,7 +164,7 @@ export const ListItemWrapper = styled.article`
     padding: 0;
   }
   .check-list {
-    border: 1px solid #2f4a7f;
+    border: 1px solid #2f4a7f29;
   }
   &.opened {
     .open-button {
@@ -200,6 +184,19 @@ export const PriceListWrapper = styled.section`
 export const PriceItemWraper = styled.article`
   position: absolute;
   cursor: pointer;
+  .select-building {
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+    font-size: 0.6rem;
+    background: #d1e5f9;
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    padding: 3px;
+    letter-spacing: -0.7px;
+    line-height: 1;
+  }
   .trigger-mobile {
     min-width: 17px;
     height: 17px;
@@ -262,28 +259,28 @@ export const PriceItemWraper = styled.article`
     }
   }
   &.shell-bay-residences {
-    bottom: 44%;
+    bottom: 54%;
     left: 1.4%;
   }
   &.st-regis-sunny-isles {
-    bottom: 54%;
+    bottom: 64%;
     left: 8.5%;
   }
   &.bentley-residences {
     left: 15%;
-    bottom: 53%;
+    bottom: 64%;
   }
   &.rivage {
     left: 22.6%;
-    bottom: 53%;
+    bottom: 64%;
   }
   &.baia-bay {
     left: 33.3%;
-    bottom: 41%;
+    bottom: 51%;
   }
   &.perigon {
     left: 44%;
-    bottom: 48%;
+    bottom: 58%;
   }
   &.shore-club {
     left: 49.7%;
@@ -385,7 +382,7 @@ export const FormWrapper = styled.section`
     width: 100%;
     height: 30px;
     border-radius: 5px;
-    border: 1px solid #2f4a7f;
+    border: 1px solid #2f4a7f29;
     padding: 3px;
     color: #2f4a7f;
     margin-bottom: 10px;
@@ -466,12 +463,8 @@ export const IncludeInput = styled.div`
   font-size: 1rem;
   background-size: 18px;
   button {
-    height: 35px;
-    width: 35px;
-    img {
-      height: 35px;
-      width: 35px;
-    }
+    height: 20px;
+    width: 20px;
   }
   &:last-type {
     margin-bottom: 0;
@@ -481,7 +474,7 @@ export const IncludeInput = styled.div`
     font-size: 0.8rem;
   }
   button {
-    border: 1px solid #2f4a7f;
+    border: 1px solid #2f4a7f29;
   }
   @media (min-width: 1119px) and (max-width: 1800px) {
     height: 30px;
@@ -498,7 +491,6 @@ export const IncludeInput = styled.div`
   }
 `;
 export const CheckWrapper = styled.button<{
-  src: string;
   height: string;
   width: string;
 }>`
@@ -511,13 +503,22 @@ export const CheckWrapper = styled.button<{
   min-width: ${(props) => props.width};
   border: none;
   cursor: pointer;
-  border-radius: 50%;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
-  background-image: url(${(props) => props.src});
+  background: white;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(59, 76, 126, 0.5) 20%,
+    rgba(255, 255, 255, 1) 50% rgba(59, 76, 126, 1) 76%
+  );
+  border: 1px solid #2f4a7f29;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   img {
     width: 100%;
     height: 100%;
@@ -530,14 +531,15 @@ export const CheckWrapper = styled.button<{
   &.active {
     img {
       opacity: 1;
-      transform: rotate3d(1, 1, 1, 0);
+      transform: rotate3d(1, 1, 1, 0) scale(1.5);
+      background: #2f4a7f;
     }
   }
 `;
 export const TextAreaWrapper = styled.label`
   background: #d3dfee;
   border-radius: 5px;
-  border: 1px solid #2f4a7f;
+  border: 1px solid #2f4a7f29;
   overflow: hidden;
   margin-bottom: 10px;
   h3 {

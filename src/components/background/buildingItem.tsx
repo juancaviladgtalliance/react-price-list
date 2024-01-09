@@ -2,6 +2,7 @@ import { Styled, redux } from "../../libs";
 import { BuildingIem } from "../../types";
 //import ModalComponent from "../modalComponent";
 import Check from "../../../public/img/logos/check.png";
+import CheckForm from "../form/checkForm";
 
 function BuildingItem({ building }: { building: BuildingIem }) {
   const dispatch = redux.hooks.useAppDispatch();
@@ -10,6 +11,7 @@ function BuildingItem({ building }: { building: BuildingIem }) {
     message: { options },
   } = redux.hooks.useAppSelector((state) => state.form);
   // const { openOptions } = redux.hooks.useAppSelector((state) => state.ui);
+  const checkOption = options.includes(title) ? true : false;
 
   const hanclerClick = (title: string) => {
     if (options.includes(title)) {
@@ -49,27 +51,16 @@ function BuildingItem({ building }: { building: BuildingIem }) {
       </button>
       <div className="trigger-container">
         <div className="modal-section-content">{modalItem}</div>
-        {options.includes(title) ? (
-          <button
-            className="trigger"
-            onClick={() => {
-              hanclerClick(title);
-            }}
-          >
-            {includeNeigborhood}
-          </button>
-        ) : (
-          <>
-            <button
-              className="trigger"
-              onClick={() => {
-                hanclerClick(title);
-              }}
-            >
-              {includeNeigborhood}
-            </button>
-          </>
-        )}
+        <div className="select-building">
+          <CheckForm
+            checked={checkOption}
+            height="20px"
+            width="20px"
+            className="check-list"
+            activeChecked={() => hanclerClick(title)}
+          />
+          <span onClick={() => hanclerClick(title)}>Send me prices</span>
+        </div>
       </div>
     </Styled.PriceItemWraper>
   );
