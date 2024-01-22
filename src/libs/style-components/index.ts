@@ -47,13 +47,7 @@ export const TitleWrapper = styled.div`
   }
   @media (min-width: 1291px) {
     h1 {
-      font-size: 1.2rem;
-      &.ver1 {
-        font-size: 1rem;
-      }
-      .no-title {
-        display: none;
-      }
+      font-weight: 700;
     }
   }
 `;
@@ -77,11 +71,12 @@ export const BackgroundWrapper = styled.section<{ src: string }>`
   }
   .bg-slicer {
     background-image: url(${(props) => props.src});
-    background-size: 100% 100%;
+    background-size: 100% 96%;
     background-position: bottom;
     background-repeat: no-repeat;
-    height: 84vh;
+    height: 80vh;
     width: 270vw;
+
     @media (max-width: 767px) {
       height: 45vh;
       width: 350vw;
@@ -102,6 +97,13 @@ export const BackgroundWrapper = styled.section<{ src: string }>`
       height: 72vh;
       width: 207vw;
     }
+    @media (min-width: 1800px) {
+      background-size: 100% 120%;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      height: 80vh;
+      width: 270vw;
+    }
   }
 `;
 export const ListWrapper = styled.section`
@@ -111,9 +113,9 @@ export const ListWrapper = styled.section`
     background: #f1f4f7;
   }
   h2 {
-    font-size: 0.8rem;
+    font-size: 16px;
     line-height: 1.2;
-    padding: 15px;
+    padding: 13px;
     text-align: center;
     font-weight: 600;
     color: #3b4c7e;
@@ -344,67 +346,67 @@ export const PriceItemWraper = styled.article`
     }
   }
   &.shell-bay-residences {
-    bottom: 51%;
+    bottom: 65%;
     left: 1.1%;
   }
   &.pierty-sixty-six {
-    bottom: 39%;
+    bottom: 49%;
     left: 8%;
   }
   &.sixth-and-rio {
-    bottom: 45%;
+    bottom: 58%;
     left: 18.1%;
   }
   &.andare {
-    bottom: 50%;
+    bottom: 65%;
     left: 22%;
   }
   &.selene {
-    bottom: 49%;
+    bottom: 64%;
     left: 26.5%;
   }
   &.the-terraces-fort-lauderdale {
-    bottom: 45%;
+    bottom: 58%;
     left: 30.3%;
   }
   &.edition-residences-fort-lauderdale {
-    bottom: 42%;
+    bottom: 54%;
     left: 37%;
   }
   &.salato-pompano-beach {
-    bottom: 43%;
+    bottom: 58%;
     left: 47%;
   }
   &.ritz-carlton-pompano-beach {
-    bottom: 48%;
+    bottom: 63%;
     left: 53%;
   }
   &.waldorf-astoria-pompano-beach {
-    bottom: 51%;
+    bottom: 65%;
     left: 58.5%;
   }
   &.casamar-pompano-beach {
-    bottom: 45%;
+    bottom: 57%;
     left: 63.3%;
   }
   &.rosewood-residences-hillsboro-beach {
-    bottom: 42%;
+    bottom: 55%;
     left: 71%;
   }
   &.alina-210-boca-raton {
-    bottom: 43%;
+    bottom: 54%;
     left: 77.3%;
   }
   &.alina-220-boca-raton {
-    bottom: 42%;
+    bottom: 54%;
     left: 83%;
   }
   &.palm-beach-gardens {
-    bottom: 51%;
+    bottom: 54%;
     left: 1.1%;
   }
   &.ritz-carlton-residences-palm-beach-gardens {
-    bottom: 43%;
+    bottom: 54%;
     left: 92.2%;
   }
 `;
@@ -521,7 +523,7 @@ export const FormWrapper = styled.section`
       font-size: 14px;
       font-weight: 500;
       text-align: center;
-      font-size: 12px;
+      font-size: 16px;
     }
   }
   @media (min-width: 1292px) {
@@ -554,14 +556,7 @@ export const IncludeInput = styled.div`
   height: 40px;
   font-size: 1rem;
   background-size: 18px;
-  button {
-    height: 35px;
-    width: 35px;
-    img {
-      height: 35px;
-      width: 35px;
-    }
-  }
+
   &:last-type {
     margin-bottom: 0;
   }
@@ -733,7 +728,9 @@ export const ListNeighborhoodWrapper = styled.div`
   width: 100%;
   left: 0;
   bottom: 25%;
-
+  @media (min-width: 1800px) {
+    bottom: 30%;
+  }
   .list-neighborhood {
     display: inline-block;
     padding: 10px;
