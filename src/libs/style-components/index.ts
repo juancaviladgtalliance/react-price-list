@@ -74,35 +74,39 @@ export const BackgroundWrapper = styled.section<{ src: string }>`
     background-size: 100% 96%;
     background-position: bottom;
     background-repeat: no-repeat;
-    height: 80vh;
-    width: 270vw;
+    height: 79vh;
+    width: 130vw;
 
-    @media (max-width: 767px) {
+    @media (max-width: 435px) {
       height: 45vh;
-      width: 350vw;
+      width: 210vw;
+    }
+    @media (min-width: 436px) and (max-width: 767px) {
+      height: 45vh;
+      width: 175vw;
     }
     @media (min-width: 768px) and (max-width: 991px) {
       height: 45vh;
-      width: 270vw;
+      width: 155vw;
     }
     @media (min-width: 992px) and (max-width: 1024px) {
       height: 72vh;
-      width: 240vw;
+      width: 155vw;
     }
     @media (min-width: 1025px) and (max-width: 1190px) {
       height: 72vh;
-      width: 207vw;
+      width: 155vw;
     }
     @media (min-width: 1191px) and (max-width: 1290px) {
       height: 72vh;
-      width: 207vw;
+      width: 155vw;
     }
     @media (min-width: 1800px) {
-      background-size: 100% 120%;
+      background-size: 100% 100%;
       background-position: bottom;
       background-repeat: no-repeat;
       height: 80vh;
-      width: 270vw;
+      width: 125vw;
     }
   }
 `;
@@ -345,69 +349,77 @@ export const PriceItemWraper = styled.article`
       width: 40px;
     }
   }
+  @media (max-width: 767px) {
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+  }
+  @media (min-width: 992px) and (max-width: 1024px) {
+  }
+  @media (min-width: 1025px) and (max-width: 1190px) {
+  }
+  @media (min-width: 1191px) and (max-width: 1290px) {
+  }
+  @media (min-width: 1800px) {
+  }
   &.shell-bay-residences {
-    bottom: 65%;
-    left: 1.1%;
+    bottom: 44%;
+    left: 3%;
   }
-  &.pierty-sixty-six {
-    bottom: 49%;
-    left: 8%;
-  }
-  &.sixth-and-rio {
-    bottom: 58%;
-    left: 18.1%;
-  }
-  &.andare {
-    bottom: 65%;
-    left: 22%;
-  }
-  &.selene {
-    bottom: 64%;
-    left: 26.5%;
-  }
-  &.the-terraces-fort-lauderdale {
-    bottom: 58%;
-    left: 30.3%;
-  }
-  &.edition-residences-fort-lauderdale {
-    bottom: 54%;
-    left: 37%;
-  }
-  &.salato-pompano-beach {
-    bottom: 58%;
-    left: 47%;
-  }
-  &.ritz-carlton-pompano-beach {
-    bottom: 63%;
-    left: 53%;
-  }
-  &.waldorf-astoria-pompano-beach {
-    bottom: 65%;
-    left: 58.5%;
-  }
-  &.casamar-pompano-beach {
-    bottom: 57%;
-    left: 63.3%;
-  }
-  &.rosewood-residences-hillsboro-beach {
+  &.st-regis-sunny-isles {
     bottom: 55%;
-    left: 71%;
+    left: 11%;
   }
-  &.alina-210-boca-raton {
+  &.bentley-residences {
     bottom: 54%;
-    left: 77.3%;
+    left: 16.2%;
   }
-  &.alina-220-boca-raton {
+  &.rivage {
     bottom: 54%;
-    left: 83%;
+    left: 23.2%;
   }
-  &.palm-beach-gardens {
-    bottom: 54%;
-    left: 1.1%;
+  &.baia-bay {
+    bottom: 44%;
+    left: 32.2%;
   }
-  &.ritz-carlton-residences-palm-beach-gardens {
-    bottom: 54%;
-    left: 92.2%;
+  &.perigon {
+    bottom: 48%;
+    left: 41.6%;
+  }
+  &.shore-club {
+    bottom: 48%;
+    left: 46.3%;
+  }
+  &.five-park {
+    left: 50.6%;
+    bottom: 51%;
+  }
+  &.villa-miami {
+    left: 54.6%;
+    bottom: 59%;
+  }
+  &.edition-residences {
+    left: 59%;
+    bottom: 53%;
+  }
+  &.cipriani {
+    left: 64%;
+    bottom: 58%;
+  }
+  &.residence-1428 {
+    left: 69%;
+    bottom: 56%;
+  }
+  &.regis {
+    left: 74.5%;
+    bottom: 52%;
+  }
+  &.vitagrove {
+    left: 90.5%;
+    bottom: 41%;
+  }
+  &.mandarin {
+    left: 80%;
+    bottom: 58%;
   }
 `;
 export const ModalItemWrapper = styled.div`
@@ -727,9 +739,18 @@ export const ListNeighborhoodWrapper = styled.div`
   position: relative;
   width: 100%;
   left: 0;
-  bottom: 25%;
-  @media (min-width: 1800px) {
+  bottom: 27%;
+  @media (min-width: 1367px) {
     bottom: 30%;
+  }
+  @media (min-width: 1439px) {
+    bottom: 29%;
+  }
+  @media (min-width: 1800px) {
+    bottom: 30.4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   .list-neighborhood {
     display: inline-block;
@@ -746,70 +767,32 @@ export const ListNeighborhoodWrapper = styled.div`
     h3 {
       font-size: 15px;
     }
-    &#hallandale {
-      h3 {
-        min-width: 12vw;
-      }
-    }
-    &#fort-lauderdale {
-      h3 {
-        min-width: 105vw;
-      }
-    }
-    &#pompano-beach {
-      h3 {
-        min-width: 65vw;
-      }
-    }
-    &#hillsboro-beach {
-      h3 {
-        min-width: 25vw;
-      }
-    }
-    &#boca-raton {
-      h3 {
-        min-width: 30vw;
-      }
-    }
-    &#palm-beach-gardens {
-      h3 {
-        min-width: 30vw;
-      }
-    }
+
     @media (max-width: 435px) {
       padding: 1vw;
       h3 {
         font-size: 9px;
       }
-      &#hallandale {
-        h3 {
-          min-width: 12vw;
-        }
+      &#hallandale h3 {
+        min-width: 12vw;
       }
-      &#fort-lauderdale {
-        h3 {
-          min-width: 122vw;
-        }
+      &#sunny-isles h3 {
+        min-width: 20vw;
       }
-      &#pompano-beach {
-        h3 {
-          min-width: 86vw;
-        }
+      &#surfside h3 {
+        min-width: 40vw;
       }
-      &#hillsboro-beach {
-        h3 {
-          min-width: 31vw;
-        }
+      &#miami-beach h3 {
+        min-width: 26vw;
       }
-      &#boca-raton {
-        h3 {
-          min-width: 33vw;
-        }
+      &#edgewater h3 {
+        min-width: 18vw;
       }
-      &#palm-beach-gardens {
-        h3 {
-          min-width: 40vw;
-        }
+      &#brickell h3 {
+        min-width: 40vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 32vw;
       }
     }
     @media (min-width: 436px) and (max-width: 767px) {
@@ -817,35 +800,28 @@ export const ListNeighborhoodWrapper = styled.div`
       h3 {
         font-size: 9px;
       }
-      &#hallandale {
-        h3 {
-          min-width: 12vw;
-        }
+      &#hallandale h3 {
+        min-width: 12vw;
+        max-width: 15vw;
       }
-      &#fort-lauderdale {
-        h3 {
-          min-width: 132vw;
-        }
+      &#sunny-isles h3 {
+        min-width: 22vw;
       }
-      &#pompano-beach {
-        h3 {
-          min-width: 91vw;
-        }
+      &#surfside h3 {
+        min-width: 32vw;
+        max-width: 32vw;
       }
-      &#hillsboro-beach {
-        h3 {
-          min-width: 31vw;
-        }
+      &#miami-beach h3 {
+        min-width: 23vw;
       }
-      &#boca-raton {
-        h3 {
-          min-width: 39vw;
-        }
+      &#edgewater h3 {
+        min-width: 15vw;
       }
-      &#palm-beach-gardens {
-        h3 {
-          min-width: 38vw;
-        }
+      &#brickell h3 {
+        min-width: 35vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 25vw;
       }
     }
     @media (min-width: 768px) and (max-width: 991px) {
@@ -853,35 +829,26 @@ export const ListNeighborhoodWrapper = styled.div`
       h3 {
         font-size: 12px;
       }
-      &#hallandale {
-        h3 {
-          min-width: 12vw;
-        }
+      &#hallandale h3 {
+        min-width: 15vw;
       }
-      &#fort-lauderdale {
-        h3 {
-          min-width: 102vw;
-        }
+      &#sunny-isles h3 {
+        min-width: 17vw;
       }
-      &#pompano-beach {
-        h3 {
-          min-width: 68vw;
-        }
+      &#surfside h3 {
+        min-width: 31vw;
       }
-      &#hillsboro-beach {
-        h3 {
-          min-width: 22vw;
-        }
+      &#miami-beach h3 {
+        min-width: 19vw;
       }
-      &#boca-raton {
-        h3 {
-          min-width: 28vw;
-        }
+      &#edgewater h3 {
+        min-width: 14vw;
       }
-      &#palm-beach-gardens {
-        h3 {
-          min-width: 30vw;
-        }
+      &#brickell h3 {
+        min-width: 31vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 24vw;
       }
     }
     @media (min-width: 992px) and (max-width: 1024px) {
@@ -889,35 +856,26 @@ export const ListNeighborhoodWrapper = styled.div`
       h3 {
         font-size: 12px;
       }
-      &#hallandale {
-        h3 {
-          min-width: 8vw;
-        }
+      &#hallandale h3 {
+        min-width: 15vw;
       }
-      &#fort-lauderdale {
-        h3 {
-          min-width: 92vw;
-        }
+      &#sunny-isles h3 {
+        min-width: 17vw;
       }
-      &#pompano-beach {
-        h3 {
-          min-width: 60vw;
-        }
+      &#surfside h3 {
+        min-width: 31vw;
       }
-      &#hillsboro-beach {
-        h3 {
-          min-width: 22vw;
-        }
+      &#miami-beach h3 {
+        min-width: 19vw;
       }
-      &#boca-raton {
-        h3 {
-          min-width: 25vw;
-        }
+      &#edgewater h3 {
+        min-width: 14vw;
       }
-      &#palm-beach-gardens {
-        h3 {
-          min-width: 25vw;
-        }
+      &#brickell h3 {
+        min-width: 31vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 24vw;
       }
     }
     @media (min-width: 1025px) and (max-width: 1190px) {
@@ -925,35 +883,26 @@ export const ListNeighborhoodWrapper = styled.div`
       h3 {
         font-size: 12px;
       }
-      &#hallandale {
-        h3 {
-          min-width: 12vw;
-        }
+      &#hallandale h3 {
+        min-width: 15vw;
       }
-      &#fort-lauderdale {
-        h3 {
-          min-width: 78vw;
-        }
+      &#sunny-isles h3 {
+        min-width: 17vw;
       }
-      &#pompano-beach {
-        h3 {
-          min-width: 49vw;
-        }
+      &#surfside h3 {
+        min-width: 31vw;
       }
-      &#hillsboro-beach {
-        h3 {
-          min-width: 19vw;
-        }
+      &#miami-beach h3 {
+        min-width: 19vw;
       }
-      &#boca-raton {
-        h3 {
-          min-width: 22vw;
-        }
+      &#edgewater h3 {
+        min-width: 14vw;
       }
-      &#palm-beach-gardens {
-        h3 {
-          min-width: 22vw;
-        }
+      &#brickell h3 {
+        min-width: 31vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 24vw;
       }
     }
     @media (min-width: 1191px) and (max-width: 1290px) {
@@ -961,39 +910,107 @@ export const ListNeighborhoodWrapper = styled.div`
       h3 {
         font-size: 12px;
       }
-      &#hallandale {
-        h3 {
-          min-width: 12vw;
-        }
+      &#hallandale h3 {
+        min-width: 15vw;
       }
-      &#fort-lauderdale {
-        h3 {
-          min-width: 78vw;
-        }
+      &#sunny-isles h3 {
+        min-width: 17vw;
       }
-      &#pompano-beach {
-        h3 {
-          min-width: 49vw;
-        }
+      &#surfside h3 {
+        min-width: 31vw;
       }
-      &#hillsboro-beach {
-        h3 {
-          min-width: 19vw;
-        }
+      &#miami-beach h3 {
+        min-width: 19vw;
       }
-      &#boca-raton {
-        h3 {
-          min-width: 22vw;
-        }
+      &#edgewater h3 {
+        min-width: 14vw;
       }
-      &#palm-beach-gardens {
-        h3 {
-          min-width: 22vw;
-        }
+      &#brickell h3 {
+        min-width: 31vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 24vw;
+      }
+    }
+    @media (min-width: 1291px) and (max-width: 1430px) {
+      padding: 2px;
+      h3 {
+        font-size: 12px;
+      }
+      &#hallandale h3 {
+        min-width: 13vw;
+      }
+      &#sunny-isles h3 {
+        min-width: 15vw;
+      }
+      &#surfside h3 {
+        min-width: 25vw;
+      }
+      &#miami-beach h3 {
+        min-width: 16vw;
+      }
+      &#edgewater h3 {
+        min-width: 12vw;
+      }
+      &#brickell h3 {
+        min-width: 27vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 18vw;
+      }
+    }
+    @media (min-width: 1431px) {
+      padding: 2px;
+      h3 {
+        font-size: 9px;
+      }
+      &#hallandale h3 {
+        min-width: 13vw;
+      }
+      &#sunny-isles h3 {
+        min-width: 15vw;
+      }
+      &#surfside h3 {
+        min-width: 25vw;
+      }
+      &#miami-beach h3 {
+        min-width: 16vw;
+      }
+      &#edgewater h3 {
+        min-width: 12vw;
+      }
+      &#brickell h3 {
+        min-width: 27vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 18vw;
       }
     }
     @media (min-width: 1800px) {
-      font-size: 18px;
+      h3 {
+        font-size: 14px;
+      }
+      &#hallandale h3 {
+        min-width: 13vw;
+      }
+      &#sunny-isles h3 {
+        min-width: 14vw;
+      }
+      &#surfside h3 {
+        min-width: 24vw;
+      }
+      &#miami-beach h3 {
+        min-width: 16vw;
+      }
+      &#edgewater h3 {
+        min-width: 11vw;
+      }
+      &#brickell h3 {
+        min-width: 26vw;
+      }
+      &#coconut-grove h3 {
+        min-width: 17vw;
+      }
     }
   }
 `;

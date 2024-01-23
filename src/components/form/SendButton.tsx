@@ -93,7 +93,7 @@ function SendButton() {
               const footer = document.getElementById("footer")!;
               const alink = document.createElement("a");
               alink.href =
-                "https://luxlifemiamiblog.com/the-5-best-new-construction-condos-fort-lauderdale/";
+                "https://luxlifemiamiblog.com/how-to-find-the-best-new-construction-projects-in-miami-and-fort-lauderdale/";
               alink.target = "_blank";
               footer.appendChild(alink);
               alink.click();
