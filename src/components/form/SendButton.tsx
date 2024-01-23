@@ -14,13 +14,16 @@ function SendButton() {
 
   const handlerClick = () => {
     const regexEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (message.includes.length == 0) {
+      dispatch(redux.formData.addMessageIncludes("None Includes Selected"));
+      // dispatch(redux.formData.addMessageOption("All buildings"));
+    }
 
     if (
       name.value == "" ||
       phone.value == "" ||
       email.value == "" ||
       message.options.length == 0 ||
-      message.includes.length == 0 ||
       !regexEmail.test(email.value)
     ) {
       if (name.value == "") {
@@ -55,22 +58,20 @@ function SendButton() {
         toast.error("Please select at least one Building");
         setHasError(true);
       }
-      if (message.includes.length == 0) {
-        toast.error("Please select at least one include");
-        setHasError(true);
-      }
     } else {
       dispatch(redux.formData.setResponse({ ...response, status: "pending" }));
       const url = import.meta.env.PROD
         ? import.meta.env.VITE_PROD_URL_ENDPOINT
         : import.meta.env.VITE_DEV_URL_ENDPOINT;
       const formData = new FormData();
+
       formData.append("name", name.value);
       formData.append("email", email.value);
       formData.append("phone", phone.value);
       formData.append("ib_tags", ib_tags);
       formData.append("action", action);
       formData.append("message", JSON.stringify(message));
+      //     console.log(message);
       fetch(url, {
         method: "POST",
         body: formData,
@@ -92,7 +93,7 @@ function SendButton() {
               const footer = document.getElementById("footer")!;
               const alink = document.createElement("a");
               alink.href =
-                "https://luxlifemiamiblog.com/the-best-miami-new-construction-condos-2022-2023/";
+                "https://luxlifemiamiblog.com/how-to-find-the-best-new-construction-projects-in-miami-and-fort-lauderdale/";
               alink.target = "_blank";
               footer.appendChild(alink);
               alink.click();

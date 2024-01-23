@@ -1,5 +1,4 @@
 import { Styled } from "../../libs";
-import Circle from "../../../public/img/logos/circulo-icon.png";
 import Check from "../../../public/img/logos/check.png";
 
 function CheckForm({
@@ -18,7 +17,6 @@ function CheckForm({
   const isActive = checked ? " active" : "";
   return (
     <Styled.CheckWrapper
-      src={Circle}
       height={height}
       width={width}
       onClick={activeChecked}
