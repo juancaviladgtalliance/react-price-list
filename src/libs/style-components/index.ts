@@ -27,6 +27,9 @@ export const TitleWrapper = styled.div`
   h1 {
     text-transform: uppercase;
     font-size: 16px;
+    @media (min-width: 1400px) {
+      font-weight: bold;
+    }
   }
   h2 {
     font-weight: 400;
@@ -73,9 +76,9 @@ export const ListWrapper = styled.section`
     background: #f1f4f7;
   }
   h2 {
-    font-size: 0.75rem;
+    font-size: 16px;
     line-height: 1.2;
-    padding: 15px;
+    padding: 13px;
     text-align: center;
     font-weight: 600;
     color: #3b4c7e;
@@ -284,35 +287,35 @@ export const PriceItemWraper = styled.article`
   }
   &.shore-club {
     left: 49.7%;
-    bottom: 50%;
+    bottom: 58%;
   }
   &.five-park {
     left: 55%;
-    bottom: 51%;
+    bottom: 61%;
   }
   &.villa-miami {
     left: 60%;
-    bottom: 58%;
+    bottom: 70%;
   }
   &.edition-residences {
     left: 65%;
-    bottom: 51%;
+    bottom: 62%;
   }
   &.cipriani {
     left: 70%;
-    bottom: 56%;
+    bottom: 67%;
   }
   &.residence-1428 {
     left: 75%;
-    bottom: 53%;
+    bottom: 63%;
   }
   &.regis {
     left: 80.3%;
-    bottom: 58%;
+    bottom: 68%;
   }
   &.vitagrove {
     left: 90%;
-    bottom: 39%;
+    bottom: 48%;
   }
 `;
 export const ModalItemWrapper = styled.div`
@@ -426,10 +429,9 @@ export const FormWrapper = styled.section`
       display: block;
       color: #fff;
       margin-bottom: 20px;
-      font-size: 14px;
       font-weight: 500;
       text-align: center;
-      font-size: 12px;
+      font-size: 16px;
     }
   }
   @media (min-width: 1292px) {
