@@ -402,12 +402,12 @@ export const PriceItemWraper = styled.article`
     bottom: 53%;
   }
   &.cipriani {
-    left: 64%;
-    bottom: 58%;
-  }
-  &.residence-1428 {
     left: 69%;
     bottom: 56%;
+  }
+  &.residence-1428 {
+    left: 80%;
+    bottom: 58%;
   }
   &.regis {
     left: 74.5%;
@@ -418,7 +418,7 @@ export const PriceItemWraper = styled.article`
     bottom: 41%;
   }
   &.mandarin {
-    left: 80%;
+    left: 64%;
     bottom: 58%;
   }
 `;
@@ -769,30 +769,35 @@ export const ListNeighborhoodWrapper = styled.div`
     }
 
     @media (max-width: 435px) {
-      padding: 1vw;
+      padding: 0.7vw;
       h3 {
         font-size: 9px;
       }
       &#hallandale h3 {
         min-width: 12vw;
+        max-width: 18vw;
       }
       &#sunny-isles h3 {
-        min-width: 20vw;
+        min-width: 23vw;
       }
       &#surfside h3 {
         min-width: 40vw;
+        max-width: 40vw;
       }
       &#miami-beach h3 {
         min-width: 26vw;
+        max-width: 26vw;
       }
       &#edgewater h3 {
         min-width: 18vw;
+        min-width: 18vw;
       }
       &#brickell h3 {
-        min-width: 40vw;
+        min-width: 44vw;
+        max-width: 45vw;
       }
       &#coconut-grove h3 {
-        min-width: 32vw;
+        min-width: 30vw;
       }
     }
     @media (min-width: 436px) and (max-width: 767px) {

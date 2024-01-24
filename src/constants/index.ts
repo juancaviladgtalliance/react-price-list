@@ -11,7 +11,7 @@ export const assetUrl = import.meta.env.DEV
   : import.meta.env.VITE_PROD_ASSET_URL;
 
 export const dataInitialState: DataForm = {
-  ib_tags: "Price List Fort Lauderdale",
+  ib_tags: "Price List Fort Miami",
   action: "idxboost_contact_inquiry",
   name: { status: StatusInput.idle, value: "" },
   email: { status: StatusInput.idle, value: "" },
@@ -194,6 +194,22 @@ export const Buildingslist: BuildingItems = {
       order: 11,
       neighborhood: "Brickell",
       target: "brickell",
+      property_style: "mandarin",
+      title: "The Mandarin Oriental Residences Miami",
+      prices: { min: 4, min_sufix: "M+", max_sufix: "M+", max: null },
+      bed_rooms: { min: 2, max: 4 },
+      completation_date: 2027,
+      site_url:
+        "https://luxlifemiamiblog.com/condos/the-residences-at-mandarin-oriental-brickell-key/",
+      logo_image_url: `${assetUrl}/img/logos/logo-mandarin.png`, //public/img/logos/logo11.png
+      description: null,
+      independent_review_url:
+        "https://luxlifemiamiblog.com/unveiling-an-iconic-oasis-the-residences-at-mandarin-oriental-miami/",
+    },
+    {
+      order: 12,
+      neighborhood: "Brickell",
+      target: "brickell",
       property_style: "cipriani",
       title: "Cipriani",
       prices: { min: 1.6, min_sufix: "M", max_sufix: "M", max: 22 },
@@ -207,7 +223,7 @@ export const Buildingslist: BuildingItems = {
         "https://luxlifemiamiblog.com/cipriani-residences-brickell-an-independent-review/",
     },
     {
-      order: 12,
+      order: 13,
       neighborhood: "Brickell",
       target: "brickell",
       property_style: "residence-1428",
@@ -223,7 +239,7 @@ export const Buildingslist: BuildingItems = {
         "https://luxlifemiamiblog.com/the-residences-at-1428-brickell-an-independent-review/",
     },
     {
-      order: 13,
+      order: 14,
       neighborhood: "Brickell",
       target: "brickell",
       property_style: "regis",
@@ -238,7 +254,7 @@ export const Buildingslist: BuildingItems = {
         "https://luxlifemiamiblog.com/st-regis-brickell-miami-an-independent-review/",
     },
     {
-      order: 14,
+      order: 15,
       neighborhood: "Coconut Grove",
       target: "coconut-grove",
       property_style: "vitagrove",
@@ -251,22 +267,6 @@ export const Buildingslist: BuildingItems = {
       description: null,
       independent_review_url:
         "https://luxlifemiamiblog.com/vita-coconut-grove-an-independent-review/",
-    },
-    {
-      order: 15,
-      neighborhood: "Brickell",
-      target: "brickell",
-      property_style: "mandarin",
-      title: "The Mandarin Oriental Residences Miami",
-      prices: { min: 4, min_sufix: "M+", max_sufix: "M+", max: null },
-      bed_rooms: { min: 2, max: 4 },
-      completation_date: 2027,
-      site_url:
-        "https://luxlifemiamiblog.com/condos/the-residences-at-mandarin-oriental-brickell-key/",
-      logo_image_url: `${assetUrl}/img/logos/logo-mandarin.png`, //public/img/logos/logo11.png
-      description: null,
-      independent_review_url:
-        "https://luxlifemiamiblog.com/unveiling-an-iconic-oasis-the-residences-at-mandarin-oriental-miami/",
     },
   ],
 };
